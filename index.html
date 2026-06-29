@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutrition - GDM | Perinatal Medical Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --pmg-purple: #602054;
+      --pmg-purple-soft: #8a517f;
+      --pmg-teal: #21bdb7;
+      --pmg-blue: #01274f;
+      --pmg-orange: #f44b03;
+      --pmg-ink: #2d2930;
+      --pmg-muted: #6f6872;
+      --pmg-wash: #f2f0f2;
+      --pmg-line: rgba(96, 32, 84, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--pmg-ink);
+      background: #fff;
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.58;
+    }
+
+    a { color: var(--pmg-purple); }
+
+    .topbar {
+      position: absolute;
+      z-index: 20;
+      width: 100%;
+      padding: 18px clamp(18px, 4vw, 58px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand img {
+      display: block;
+      width: min(300px, 58vw);
+      height: auto;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2vw, 28px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .navlinks a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.25px;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: 66vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 112px 22px 72px;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      background:
+        linear-gradient(rgba(20, 14, 21, .58), rgba(20, 14, 21, .58)),
+        url("https://drearhart.com/img/gynecologist-performing-ultrasound-consultation.jpg") center 43% / cover no-repeat;
+    }
+
+    .hero-inner {
+      width: min(1050px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--pmg-teal);
+    }
+
+    h1,
+    h2,
+    .display-title {
+      font-family: "Lora", Georgia, serif;
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0 auto 22px;
+      font-size: clamp(44px, 7.4vw, 86px);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 2px solid currentColor;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .btn-light-outline {
+      color: #fff;
+    }
+
+    .btn-light-outline:hover {
+      color: var(--pmg-purple);
+      background: #fff;
+      border-color: #fff;
+    }
+
+    .btn-purple {
+      color: #fff;
+      background: var(--pmg-purple);
+      border-color: var(--pmg-purple);
+    }
+
+    .btn-purple:hover {
+      color: var(--pmg-purple);
+      background: #fff;
+    }
+
+    .intro-band {
+      background: var(--pmg-wash);
+      padding: 66px 22px;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .intro-copy {
+      padding: 12px 0;
+    }
+
+    .section-kicker {
+      color: var(--pmg-teal);
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin: 0 0 12px;
+    }
+
+    .intro-copy h2,
+    .language-heading h2 {
+      margin: 0 0 18px;
+      color: var(--pmg-purple);
+      font-size: clamp(34px, 4vw, 54px);
+    }
+
+    .intro-copy p {
+      max-width: 760px;
+      color: var(--pmg-muted);
+      font-size: 18px;
+      margin: 0 0 18px;
+    }
+
+    .quick-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 44px rgba(45, 41, 48, .08);
+      border-top: 6px solid var(--pmg-teal);
+    }
+
+    .quick-card h3 {
+      margin: 0 0 18px;
+      color: var(--pmg-blue);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .check-list,
+    .plain-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .check-list li,
+    .plain-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--pmg-muted);
+    }
+
+    .check-list i,
+    .plain-list i {
+      color: var(--pmg-teal);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .anchor-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .language-section {
+      padding: 76px 0;
+    }
+
+    .language-section.alt {
+      background: #fbfafb;
+    }
+
+    .language-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .language-heading p {
+      max-width: 740px;
+      color: var(--pmg-muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .lang-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      height: 48px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--pmg-purple);
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      grid-column: span 4;
+      min-height: 100%;
+      background: #fff;
+      border: 1px solid var(--pmg-line);
+      border-radius: 8px;
+      padding: 26px;
+      box-shadow: 0 14px 34px rgba(45, 41, 48, .06);
+    }
+
+    .feature-card.wide {
+      grid-column: span 8;
+    }
+
+    .feature-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 14px;
+      color: var(--pmg-blue);
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .feature-card h3 i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--pmg-teal);
+      font-size: 18px;
+    }
+
+    .feature-card p {
+      color: var(--pmg-muted);
+      margin: 0 0 14px;
+    }
+
+    .meal-plan {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .meal {
+      min-height: 116px;
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(33, 189, 183, .08);
+      border: 1px solid rgba(33, 189, 183, .28);
+    }
+
+    .meal strong {
+      display: block;
+      color: var(--pmg-purple);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .meal span {
+      color: var(--pmg-muted);
+      font-size: 14px;
+    }
+
+    .carb-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .carb-item {
+      padding: 16px 10px;
+      text-align: center;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--pmg-purple-soft);
+    }
+
+    .carb-item:nth-child(2n) {
+      background: var(--pmg-blue);
+    }
+
+    .carb-item strong {
+      display: block;
+      font-size: 21px;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .carb-item span {
+      display: block;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .note-panel {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--pmg-purple), var(--pmg-blue));
+    }
+
+    .note-panel strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .guide-stack {
+      display: grid;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .guide-panel {
+      background: #fff;
+      border: 1px solid var(--pmg-line);
+      border-radius: 8px;
+      padding: clamp(22px, 3vw, 34px);
+      box-shadow: 0 14px 34px rgba(45, 41, 48, .06);
+    }
+
+    .guide-panel h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 16px;
+      color: var(--pmg-blue);
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+    }
+
+    .guide-panel h3 i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--pmg-teal);
+      font-size: 20px;
+    }
+
+    .guide-panel h4 {
+      margin: 20px 0 9px;
+      color: var(--pmg-purple);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .guide-panel p {
+      color: var(--pmg-muted);
+      margin: 0 0 14px;
+    }
+
+    .guide-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .mini-box {
+      border-radius: 8px;
+      padding: 20px;
+      background: rgba(96, 32, 84, .05);
+      border: 1px solid rgba(96, 32, 84, .12);
+    }
+
+    .mini-box.teal {
+      background: rgba(33, 189, 183, .08);
+      border-color: rgba(33, 189, 183, .22);
+    }
+
+    .mini-box h4:first-child {
+      margin-top: 0;
+    }
+
+    .bullet-list,
+    .number-list,
+    .snack-list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--pmg-muted);
+    }
+
+    .bullet-list li,
+    .number-list li,
+    .snack-list li {
+      margin-bottom: 8px;
+    }
+
+    .snack-list {
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .data-table th {
+      color: #fff;
+      background: var(--pmg-purple);
+      text-align: left;
+      padding: 12px 14px;
+    }
+
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--pmg-line);
+      color: var(--pmg-muted);
+      background: #fff;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #fbfafb;
+    }
+
+    .cta-band {
+      background:
+        linear-gradient(rgba(96, 32, 84, .88), rgba(96, 32, 84, .88)),
+        url("https://drearhart.com/img/ultrasound.jpg") center / cover no-repeat;
+      color: #fff;
+      padding: 68px 22px;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      margin: 0 auto 14px;
+      max-width: 780px;
+      font-size: clamp(34px, 4.6vw, 56px);
+    }
+
+    .cta-band p {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, .88);
+    }
+
+    footer {
+      background: #fff;
+      padding: 50px 22px;
+      color: var(--pmg-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-logo {
+      width: 250px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--pmg-purple);
+      font-weight: 600;
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        position: absolute;
+        align-items: flex-start;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .intro-grid,
+      .language-heading,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        justify-items: start;
+      }
+
+      .feature-card,
+      .feature-card.wide {
+        grid-column: span 12;
+      }
+
+      .meal-plan {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .carb-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .guide-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: 74vh;
+        padding-top: 104px;
+      }
+
+      .hero-actions,
+      .anchor-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .meal-plan,
+      .carb-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card,
+      .quick-card {
+        padding: 22px;
+      }
+
+      .snack-list {
+        columns: 1;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Perinatal Medical Group navigation">
+    <a class="brand" href="https://drearhart.com/" aria-label="Perinatal Medical Group home">
+      <img src="https://drearhart.com/img/PMG-LOGO-WHITE.svg" alt="Perinatal Medical Group">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="navlinks">
+        <li><a href="https://drearhart.com/">Home</a></li>
+        <li><a href="https://drearhart.com/about.html">About</a></li>
+        <li><a href="https://drearhart.com/patients.html">Patients</a></li>
+        <li><a href="https://drearhart.com/referring-providers.html">Referring Providers</a></li>
+        <li><a href="https://drearhart.com/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Nutrition - GDM</div>
+        <h1>Gestational Diabetes Nutrition Support</h1>
+        <p>Practical meal planning, glucose education, insulin guidance, and bilingual nutrition resources for a healthier pregnancy.</p>
+        <div class="hero-actions">
+          <a class="btn-pill btn-light-outline" href="#english">English</a>
+          <a class="btn-pill btn-light-outline" href="#spanish">Español</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-band">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <p class="section-kicker">Perinatal Medical Group</p>
+          <h2>Clear guidance for daily decisions.</h2>
+          <p>Gestational diabetes can feel overwhelming at first. This page combines the core patient education handouts into one simple guide: what GDM means, how carbohydrates fit into meals, how to build snacks, when insulin may be needed, and what to expect after delivery.</p>
+          <div class="anchor-row">
+            <a class="btn-pill btn-purple" href="#english">Read in English</a>
+            <a class="btn-pill btn-purple" href="#spanish">Leer en Español</a>
+          </div>
+        </div>
+        <aside class="quick-card" aria-label="Nutrition support includes">
+          <h3>Nutrition support includes</h3>
+          <ul class="check-list">
+            <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>1-on-1 medical nutrition counseling</span></li>
+            <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Diabetes nutrition education</span></li>
+            <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Glucose and diet monitoring</span></li>
+            <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Meal planning and protein snack ideas</span></li>
+            <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Insulin administration education</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="english" class="language-section">
+      <div class="container">
+        <div class="language-heading">
+          <div>
+            <p class="section-kicker">Complete Patient Guide</p>
+            <h2>English</h2>
+            <p>Gestational diabetes is high blood sugar that develops during pregnancy. This guide combines the supplied education materials into one complete resource for glucose monitoring, carbohydrate planning, protein snacks, insulin education, A1C/eAG, and follow-up after delivery.</p>
+          </div>
+          <span class="lang-badge">ENG</span>
+        </div>
+
+        <div class="guide-stack">
+          <article class="guide-panel">
+            <h3><i class="bi bi-heart-pulse" aria-hidden="true"></i>What gestational diabetes is</h3>
+            <p>Gestational diabetes is high blood sugar that develops during pregnancy in pregnant women who have never had high blood sugar before. Blood sugar usually returns to normal after the baby is born.</p>
+            <p>When you eat, some food is broken down into sugar, also called glucose. Sugar travels in your blood to all of your body's cells. Insulin helps sugar move from your blood into your cells. Insulin is a hormone made by the beta cells in your pancreas.</p>
+            <p>Your cells need sugar for energy. Sugar from food makes blood sugar levels rise. Sugar may come from sugar itself or from carbohydrates that the body turns into sugar. Natural insulin lowers blood sugar by helping sugar move from the blood into the cells.</p>
+            <p>During pregnancy, hormones that help the baby develop can cause insulin resistance. Your body tries to produce more insulin to handle the extra sugar, but it may still not be enough. Sugar then stays in the blood instead of moving into cells, causing blood sugar levels to become too high.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-shield-check" aria-hidden="true"></i>Risks and why control matters</h3>
+            <p>If blood sugar levels are not managed during pregnancy, this can cause problems for both you and your baby. Your baby gets nutrients, including sugar, from your blood. If your blood sugar levels are high, your baby will get too much sugar, store extra sugar as fat, gain too much weight, and may become too large.</p>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Higher risk for baby</h4>
+                <ul class="bullet-list">
+                  <li>Injuries during delivery</li>
+                  <li>Low blood sugar after birth</li>
+                  <li>Breathing problems</li>
+                  <li>Jaundice</li>
+                  <li>Developmental problems, usually related to premature birth and not common</li>
+                  <li>Possibility of type 2 diabetes later in life</li>
+                </ul>
+              </div>
+              <div class="mini-box teal">
+                <h4>Higher risk for mother</h4>
+                <ul class="bullet-list">
+                  <li>Type 2 diabetes</li>
+                  <li>High blood pressure during pregnancy</li>
+                  <li>Caesarean section</li>
+                  <li>Gestational diabetes in a future pregnancy</li>
+                </ul>
+              </div>
+            </div>
+            <div class="note-panel"><strong>These problems do not have to happen.</strong> Managing blood sugar levels can help reduce the risk.</div>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i>Managing gestational diabetes</h3>
+            <p>The goal is to keep blood sugar levels as close to normal as possible. Your diabetes care team will help create a care plan to meet that goal.</p>
+            <ul class="bullet-list">
+              <li>Eat meals and snacks according to your meal plan.</li>
+              <li>Get regular physical activity.</li>
+              <li>Take medicine as prescribed by your doctor.</li>
+              <li>Check your blood sugar often according to your care plan.</li>
+              <li>Bring your glucose log and meal questions to visits.</li>
+            </ul>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-pie-chart" aria-hidden="true"></i>Carbohydrates and plate planning</h3>
+            <p>Food groups that count as carbohydrates include beans, grains, pasta, breads, starchy vegetables, dairy products, milk alternatives, fruits, snacks, baked goods, condiments, and salad dressing.</p>
+            <h4>Daily carbohydrate rhythm</h4>
+            <div class="carb-strip" aria-label="Carbohydrate timing guide">
+              <div class="carb-item"><strong>30g</strong><span>Breakfast<br>2 servings</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Snack</span></div>
+              <div class="carb-item"><strong>30-45g</strong><span>Lunch<br>2-3 servings</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Snack</span></div>
+              <div class="carb-item"><strong>30-45g</strong><span>Dinner<br>2-3 servings</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Snack</span></div>
+            </div>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Vegetables</h4>
+                <p>Make half your plate non-starchy vegetables. Try fresh, frozen, or low-sodium canned vegetables.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Protein</h4>
+                <p>Examples include chicken, turkey, lean cuts of beef, eggs, nuts, fish, and tuna. Choose baked, boiled, sauteed, rotisserie, grilled, or roasted preparations instead of fried.</p>
+              </div>
+            </div>
+            <h4>Carbohydrates</h4>
+            <p>Consume recommended carbohydrate amounts as directed and choose whole grain products whenever possible. Remember to eat 3 meals and 3 snacks, add protein to snacks, and try to eat at the same times every day.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-egg-fried" aria-hidden="true"></i>Sample one-day meal plan</h3>
+            <div class="meal-plan">
+              <div class="meal"><strong>Breakfast (30g carbs)</strong><span>2 scrambled eggs, 1 slice whole wheat toast, 1/2 cup berries</span></div>
+              <div class="meal"><strong>Morning Snack (15g carbs)</strong><span>1 small apple, 1 tablespoon peanut butter</span></div>
+              <div class="meal"><strong>Lunch (45g carbs)</strong><span>Grilled chicken salad, 1 whole wheat pita, 1 small orange</span></div>
+              <div class="meal"><strong>Afternoon Snack (15g carbs)</strong><span>Plain unsweetened Greek yogurt</span></div>
+              <div class="meal"><strong>Dinner (45g carbs)</strong><span>Baked salmon, 1/2 cup brown rice, roasted vegetables</span></div>
+              <div class="meal"><strong>Bedtime Snack (15-20g carbs)</strong><span>Whole grain crackers with cheese</span></div>
+            </div>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-basket" aria-hidden="true"></i>Protein snack ideas</h3>
+            <p>Protein snacks help fill you up just enough and provide longer-lasting energy than carb-heavy options.</p>
+            <ol class="snack-list">
+              <li>Cottage-style fruit: 1/2 cup cottage cheese with 1/2 cup fruit such as bananas, mixed berries, or melon.</li>
+              <li>Beef or turkey jerky: choose low-sodium, natural, or lightly flavored brands; 1 oz has about 9g protein.</li>
+              <li>Mixed nuts or trail mix with dried fruit.</li>
+              <li>Pumpkin seeds: 1/2 cup has about 14g protein.</li>
+              <li>Hard-boiled egg, alone or sliced on whole-wheat bread.</li>
+              <li>Deli rollup: low-sodium turkey, chicken, or roast beef with low-fat cheese, pepper, tomato, or lettuce.</li>
+              <li>Nut butter boat: celery or apple with nut butter, almonds, or raisins.</li>
+              <li>Mini bean-and-cheese quesadilla with black beans, salsa, cheddar, and a small tortilla.</li>
+              <li>Protein shake such as vanilla protein with orange juice and ice, or iced coffee with chocolate protein.</li>
+              <li>KIND bar or KIND Plus protein variety.</li>
+              <li>Easy oatmeal raisin microwave cookie.</li>
+              <li>Tofu sticks, baked and served with tomato or teriyaki dipping sauce.</li>
+              <li>Chunky Monkey shake: banana, peanut butter, low-fat chocolate milk, and ice.</li>
+              <li>Edamame poppers; 1 cup of pods has about 17g protein.</li>
+              <li>Hummus dippers with carrots, celery, or snow peas.</li>
+              <li>Soy milk smoothie with frozen blueberries or raspberries.</li>
+              <li>Portable cheese platter with reduced-fat cheese, whole-grain crackers, and almonds.</li>
+              <li>Rice cake with nut butter, banana, and cinnamon.</li>
+              <li>Silver dollar protein pancakes with egg whites, oats, cottage cheese, baking powder, and vanilla.</li>
+              <li>Low-fat chocolate milk, especially after activity.</li>
+              <li>Greek berry parfait with plain Greek yogurt, berries, and roasted almonds.</li>
+              <li>Grape-and-cheese sticks.</li>
+              <li>Whole-grain toast sticks with almond butter and cinnamon.</li>
+              <li>Lentils; 1 cup has about 22g protein.</li>
+              <li>Greek yogurt parfait with fruit, honey, and toasted oats.</li>
+              <li>Mini black-bean mash taco with salsa and a small tortilla.</li>
+              <li>Turkey sandwich with Swiss cheese, lettuce, tomato, mustard, and dried cranberries.</li>
+              <li>Protein bar with attention to sugar, fat, and calories.</li>
+              <li>Overnight chocolate oats with non-dairy milk, chocolate protein powder, and walnuts.</li>
+              <li>Protein rice crispies.</li>
+              <li>Blueberry flax microwave muffin.</li>
+              <li>Glucerna Smart Shake, green top.</li>
+            </ol>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-capsule" aria-hidden="true"></i>Insulin education</h3>
+            <p>Insulin cannot be taken in pill form because digestive enzymes break it down. It is delivered into the layer of fat below the skin, called subcutaneous tissue. Common injection sites include the stomach, hips, thighs, buttocks, and backs of the arms. Because this layer has no nerve endings, injections are usually painless.</p>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Syringes</h4>
+                <p>Disposable insulin syringes vary by how much insulin they hold and by needle length and thickness. Syringes can deliver insulin directly under the skin or into a temporary port changed every 2-3 days.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Pens</h4>
+                <p>Insulin pens are pen-shaped devices with insulin inside and a dial for setting the dose. They use disposable pen needles and are often convenient, accurate, and easy to use.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Pumps</h4>
+                <p>Pumps are worn continuously and deliver insulin through a flexible tube. They require education and training and are usually considered after more experience with insulin.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Needles</h4>
+                <p>Needles range from 4 mm to 12.7 mm. Higher gauge means thinner. Short, thin needles are generally preferred; a needle longer than 6 mm is usually not needed.</p>
+              </div>
+            </div>
+            <h4>Drawing one type of insulin into a syringe</h4>
+            <ol class="number-list">
+              <li>Gather your insulin vial and a fresh syringe. Check the vial for correct insulin, no clumps or particles, and no expiration.</li>
+              <li>Gently roll intermediate or premixed insulin between your palms. Clear fast-acting or long-acting insulin generally does not need mixing.</li>
+              <li>Prepare the bottle. If new, remove the cap. Wiping with alcohol is not necessary if it is clean.</li>
+              <li>Pull air into the syringe equal to your insulin dose.</li>
+              <li>Inject air into the vial through the rubber stopper to help maintain pressure.</li>
+              <li>Turn the vial and syringe upside down and draw insulin to the desired dose.</li>
+              <li>Check for air bubbles, push air out if needed, and redraw to the correct dose.</li>
+              <li>Remove the needle and avoid letting it touch anything before injection.</li>
+            </ol>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-droplet-half" aria-hidden="true"></i>Hypoglycemia and the Rule of 15</h3>
+            <p>Symptoms of low blood sugar may include shaking, sweating, dizziness, confusion, hunger, headache, or weakness. If symptoms occur, check your blood sugar. If it is below 70 mg/dL, follow the Rule of 15.</p>
+            <ol class="number-list">
+              <li>Consume 15 grams of carbohydrates.</li>
+              <li>Wait 15 minutes and recheck blood glucose.</li>
+              <li>If still low, below 70 mg/dL, repeat until glucose is above 90 mg/dL.</li>
+              <li>Once normal, eat a balanced snack with protein and carbohydrates if the next meal is more than one hour away.</li>
+            </ol>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>A1C and eAG</h3>
+            <p>The A1C blood test shows average blood glucose over the past two to three months by measuring how much sugar is attached to red blood cells. eAG means estimated average glucose and translates A1C into a number similar to home glucose readings.</p>
+            <table class="data-table">
+              <thead><tr><th>A1C</th><th>Average Blood Glucose (eAG)</th></tr></thead>
+              <tbody>
+                <tr><td>6%</td><td>126 mg/dL</td></tr>
+                <tr><td>6.5%</td><td>140 mg/dL</td></tr>
+                <tr><td>7%</td><td>154 mg/dL</td></tr>
+                <tr><td>7.5%</td><td>169 mg/dL</td></tr>
+                <tr><td>8%</td><td>183 mg/dL</td></tr>
+                <tr><td>8.5%</td><td>197 mg/dL</td></tr>
+                <tr><td>9%</td><td>212 mg/dL</td></tr>
+                <tr><td>9.5%</td><td>226 mg/dL</td></tr>
+                <tr><td>10%</td><td>240 mg/dL</td></tr>
+                <tr><td>10.5%</td><td>255 mg/dL</td></tr>
+              </tbody>
+            </table>
+            <p>Both A1C/eAG and home meter checks are important. Meter results help with day-to-day decisions, while A1C gives a broader picture over time.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-stars" aria-hidden="true"></i>After delivery</h3>
+            <p>Your doctor will check your blood sugar 6 to 12 weeks after the baby is born to make sure it is normal. Because gestational diabetes increases the risk of diabetes later in life, your doctor may recommend continued blood sugar checks.</p>
+            <p>You can reduce your future risk by continuing to eat a healthy diet, getting regular physical activity, and managing your weight.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spanish" class="language-section alt" lang="es">
+      <div class="container">
+        <div class="language-heading">
+          <div>
+            <p class="section-kicker">Guía Completa para Pacientes</p>
+            <h2>Español</h2>
+            <p>La diabetes gestacional es un nivel alto de azúcar en la sangre que se desarrolla durante el embarazo. Esta guía reúne los materiales en español sobre alimentación, carbohidratos, meriendas con proteína, insulina, hipoglucemia, A1C/eAG y seguimiento después del parto.</p>
+          </div>
+          <span class="lang-badge">SPA</span>
+        </div>
+
+        <div class="guide-stack">
+          <article class="guide-panel">
+            <h3><i class="bi bi-heart-pulse" aria-hidden="true"></i>Qué es la diabetes gestacional</h3>
+            <p>La diabetes gestacional es un nivel alto de azúcar en la sangre que se desarrolla durante el embarazo. El nivel de azúcar en la sangre generalmente regresa a la normalidad después de nacer el bebé.</p>
+            <p>Cuando usted come, algunos alimentos se convierten en azúcar, también llamada glucosa. El azúcar viaja en su sangre a todas las células de su cuerpo. La insulina ayuda al azúcar a moverse de su sangre a sus células. La insulina es una hormona producida por las células beta en el páncreas.</p>
+            <p>Sus células necesitan azúcar para generar energía. El azúcar de los alimentos hace que el nivel de azúcar en la sangre suba. El azúcar puede venir de azúcar en sí misma o de carbohidratos que el cuerpo transforma en azúcar. La insulina baja el azúcar al ayudar a moverlo de la sangre a las células.</p>
+            <p>Durante el embarazo, las hormonas pueden aumentar los niveles de azúcar para satisfacer las necesidades de crecimiento del bebé. El cuerpo intenta producir más insulina, pero a veces no es suficiente. Entonces el azúcar se queda en la sangre y el nivel sube demasiado.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-shield-check" aria-hidden="true"></i>Riesgos y por qué es importante el control</h3>
+            <p>Si los niveles de azúcar no se controlan durante el embarazo, esto puede causar problemas tanto para usted como para su bebé. Si sus niveles están altos, el bebé recibe demasiado azúcar, puede almacenarlo como grasa, aumentar mucho de peso y ser demasiado grande.</p>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Mayor riesgo para el bebé</h4>
+                <ul class="bullet-list">
+                  <li>Lesiones durante el parto</li>
+                  <li>Niveles bajos de azúcar después de nacer</li>
+                  <li>Problemas respiratorios</li>
+                  <li>Ictericia</li>
+                  <li>Problemas de desarrollo</li>
+                  <li>Diabetes tipo 2 más adelante en su vida</li>
+                </ul>
+              </div>
+              <div class="mini-box teal">
+                <h4>Mayor riesgo para usted</h4>
+                <ul class="bullet-list">
+                  <li>Diabetes tipo 2</li>
+                  <li>Presión sanguínea alta durante el embarazo</li>
+                  <li>Cesárea</li>
+                  <li>Diabetes gestacional en otro embarazo</li>
+                </ul>
+              </div>
+            </div>
+            <div class="note-panel"><strong>Estos problemas no tienen que ocurrir.</strong> Controlar sus niveles de azúcar en la sangre puede ayudar a reducir el riesgo.</div>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i>Cómo controlar la diabetes gestacional</h3>
+            <p>Su meta es mantener los niveles de azúcar en la sangre tan cerca de lo normal como sea posible. Su médico le ayudará a preparar un plan de cuidado.</p>
+            <ul class="bullet-list">
+              <li>Coma sus comidas y meriendas de acuerdo con su plan de comida.</li>
+              <li>Haga actividad física con regularidad.</li>
+              <li>Tome sus medicamentos como se los recetó su médico.</li>
+              <li>Revise con frecuencia su azúcar en la sangre según su plan.</li>
+              <li>Traiga su registro de glucosa y preguntas sobre comidas a sus visitas.</li>
+            </ul>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-pie-chart" aria-hidden="true"></i>Carbohidratos y método del plato</h3>
+            <p>Los grupos de alimentos que se consideran carbohidratos incluyen frijoles o habichuelas, cereales, pastas, panes, verduras con almidón, productos lácteos y alternativas a la leche, frutas, bocadillos, productos horneados, condimentos y aderezos para ensaladas.</p>
+            <h4>Consumo de carbohidratos</h4>
+            <div class="carb-strip" aria-label="Guía de carbohidratos por horario">
+              <div class="carb-item"><strong>30g</strong><span>Desayuno<br>2 porciones</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Merienda</span></div>
+              <div class="carb-item"><strong>30-45g</strong><span>Almuerzo<br>2-3 porciones</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Merienda</span></div>
+              <div class="carb-item"><strong>30-45g</strong><span>Cena<br>2-3 porciones</span></div>
+              <div class="carb-item"><strong>15g</strong><span>Merienda</span></div>
+            </div>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Verduras</h4>
+                <p>Haga que la mitad de su plato esté compuesta por verduras sin almidón. Trate de elegir verduras frescas, congeladas o enlatadas con bajo contenido de sodio.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Proteínas</h4>
+                <p>Elija carnes magras como pollo, pescado cocido, pavo molido o pavo molido extra magro. Los huevos, nueces y mantequilla de maní también son fuentes de proteína. Prefiera preparaciones al horno, hervidas, salteadas, a la parrilla o rostizadas, en lugar de fritas.</p>
+              </div>
+            </div>
+            <p>Consuma las cantidades recomendadas de carbohidratos según las indicaciones y elija siempre productos integrales. Recuerde comer 3 comidas principales y 3 meriendas con proteína siguiendo un horario regular. Trate de comer a las mismas horas todos los días.</p>
+            <p>Actividad física: se recomienda caminar 30 minutos al día, de 5 a 7 días por semana, si su proveedor lo permite.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-egg-fried" aria-hidden="true"></i>Ejemplo de plan de comidas para un día</h3>
+            <div class="meal-plan">
+              <div class="meal"><strong>Desayuno (30g carbohidratos)</strong><span>2 huevos revueltos, 1 rebanada de pan integral, 1/2 taza de bayas o frutos rojos</span></div>
+              <div class="meal"><strong>Merienda de la mañana (15g)</strong><span>1 manzana pequeña, 1 cucharada de mantequilla de maní o crema de cacahuate</span></div>
+              <div class="meal"><strong>Almuerzo (45g)</strong><span>Ensalada con pollo a la parrilla, 1 pan pita integral, 1 naranja pequeña</span></div>
+              <div class="meal"><strong>Merienda de la tarde (15g)</strong><span>Yogur griego natural sin azúcar añadida</span></div>
+              <div class="meal"><strong>Cena (45g)</strong><span>Salmón al horno, 1/2 taza de arroz integral, verduras asadas</span></div>
+              <div class="meal"><strong>Antes de dormir (15-20g)</strong><span>Galletas integrales con queso</span></div>
+            </div>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-basket" aria-hidden="true"></i>Bocadillos de proteína</h3>
+            <p>Los bocadillos de proteína ayudan a saciar el hambre sin excederse y proporcionan energía más duradera que las opciones ricas en carbohidratos.</p>
+            <ol class="snack-list">
+              <li>Requesón con fruta: 1/2 taza de requesón con 1/2 taza de fruta.</li>
+              <li>Carne seca de res o pavo, baja en sodio y azúcar.</li>
+              <li>Frutos secos mixtos o mezcla tipo trail mix.</li>
+              <li>Semillas de calabaza tostadas; 1/2 taza aporta alrededor de 14g de proteína.</li>
+              <li>Huevo duro, solo o sobre pan integral.</li>
+              <li>Rollitos de fiambre con carne magra baja en sodio, queso bajo en grasa, tomate o lechuga.</li>
+              <li>Apio o manzana con mantequilla de almendra, cacahuate o anacardo.</li>
+              <li>Mini quesadilla de frijoles negros, salsa y queso cheddar.</li>
+              <li>Batidos de proteína como Creamsicle o Star-Buffs.</li>
+              <li>Barra KIND o KIND Plus con proteína.</li>
+              <li>Galleta fácil de avena y pasas al microondas.</li>
+              <li>Bastones de tofu horneados con salsa de tomate o teriyaki.</li>
+              <li>Batido Chunky Monkey con plátano, mantequilla de cacahuate, leche chocolatada baja en grasa y hielo.</li>
+              <li>Edamame; 1 taza de vainas aporta aproximadamente 17g de proteína.</li>
+              <li>Hummus con bastones de zanahoria, apio o chícharos dulces.</li>
+              <li>Batido con leche de soya y frutos rojos congelados.</li>
+              <li>Tabla portátil de quesos con queso bajo en grasa, galletas integrales y almendras.</li>
+              <li>Torta de arroz integral con mantequilla de frutos secos, plátano y canela.</li>
+              <li>Mini panqueques de proteína con claras de huevo, avena, requesón, polvo para hornear y vainilla.</li>
+              <li>Leche chocolatada baja en grasa.</li>
+              <li>Parfait griego con yogur natural, frutos rojos y almendras tostadas.</li>
+              <li>Brochetas de uva y queso.</li>
+              <li>Bastones de tostada integral con mantequilla de almendra y canela.</li>
+              <li>Lentejas; 1 taza contiene alrededor de 22g de proteína.</li>
+              <li>Parfait con yogur griego sin grasa, fruta, miel y avena tostada.</li>
+              <li>Mini taco de frijoles negros con salsa.</li>
+              <li>Sándwich de pavo con queso suizo, lechuga, tomate, mostaza y arándanos secos.</li>
+              <li>Barra de proteína con bajo exceso de azúcar, grasa y calorías.</li>
+              <li>Avena con chocolate preparada durante la noche.</li>
+              <li>Rice Krispies de recuperación con proteína.</li>
+              <li>Muffins de arándanos y linaza al microondas.</li>
+              <li>Glucerna Smart Shake, tapa verde.</li>
+            </ol>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-capsule" aria-hidden="true"></i>Uso de insulina en el embarazo</h3>
+            <p>Durante el embarazo, mantener niveles de azúcar bien controlados ayuda a tener un embarazo saludable y un bebé sano. Aunque la metformina se usa en algunos casos, la insulina es el tratamiento preferido cuando la glucosa no se controla adecuadamente solo con dieta y cambios en el estilo de vida. La insulina no atraviesa la placenta y es una opción segura y eficaz. Puede usarse durante el resto del embarazo y suspenderse después del parto cuando la glucosa se normalice.</p>
+            <div class="guide-columns">
+              <div class="mini-box">
+                <h4>Insulina de acción prolongada</h4>
+                <p>También llamada basal. Proporciona control estable durante el día y la noche. Ejemplos: detemir (Levemir) y glargina (Lantus, Toujeo, Basaglar, Rezvoglar). Usualmente se administra una vez al día por la noche a la misma hora, por ejemplo entre 6:00 y 8:00 p.m., y dura hasta 24 horas.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Insulina de acción rápida</h4>
+                <p>También llamada bolo. Actúa rápido para reducir azúcar después de comidas. Ejemplos: lispro (Humalog, Lyumjev), aspart (Novolog, Fiasp), glulisina (Apidra). Se administra 5-10 minutos antes de comidas; la comida debe estar lista. Dura aproximadamente 3-4 horas.</p>
+              </div>
+            </div>
+            <h4>Sitios y preparación</h4>
+            <ul class="bullet-list">
+              <li>Áreas recomendadas: abdomen al menos a 5 cm del ombligo, muslos externos, parte posterior de los brazos superiores o parte superior de los glúteos.</li>
+              <li>Rote los sitios para evitar bultos o acumulación de grasa (lipohipertrofia).</li>
+              <li>Lávese las manos con agua y jabón.</li>
+              <li>Retire la tapa de la pluma, coloque una aguja nueva y cebe la pluma girando dos unidades hasta que salga insulina por la punta.</li>
+            </ul>
+            <h4>Técnica de inyección</h4>
+            <ul class="bullet-list">
+              <li>Pellizque la piel si usa una aguja corta; no es necesario con una aguja más larga.</li>
+              <li>Inserte la aguja en ángulo de 90 grados.</li>
+              <li>Inyecte lentamente hasta que el dial marque 0. Mantenga presionado el botón y cuente 5-10 segundos antes de retirar la aguja.</li>
+              <li>Deseche la aguja en un recipiente de plástico rígido.</li>
+              <li>Si hay dolor o hematomas, rote sitios y evite inyectar en el músculo. Si hay pérdida de insulina, mantenga la aguja más tiempo antes de retirarla.</li>
+              <li>Si la glucosa no mejora, verifique dosis, horario y técnica; comuníquese con su proveedor si persiste.</li>
+            </ul>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-droplet-half" aria-hidden="true"></i>Hipoglucemia y regla del 15</h3>
+            <p>Síntomas de azúcar baja: temblores, sudoración, mareos, confusión, hambre, dolor de cabeza y debilidad. Si presenta síntomas, controle su nivel de azúcar. Si está por debajo de 70 mg/dL, siga la regla del 15.</p>
+            <ol class="number-list">
+              <li>Consumir 15 gramos de carbohidratos.</li>
+              <li>Esperar 15 minutos y revisar la glucosa en sangre.</li>
+              <li>Si aún está baja, por debajo de 70 mg/dL, repetir hasta que la glucosa sea mayor de 90 mg/dL.</li>
+              <li>Una vez normalizada, ingerir un refrigerio equilibrado con proteína y carbohidratos si la próxima comida es en más de una hora.</li>
+            </ol>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-chat-square-heart" aria-hidden="true"></i>Mitos sobre la insulina</h3>
+            <div class="guide-columns">
+              <div class="mini-box"><h4>Mito</h4><p>Usar insulina significa que mi diabetes es grave.</p><h4>Verdad</h4><p>Necesitar insulina no es un fracaso, sino un ajuste necesario para mantener a usted y a su bebé saludables.</p></div>
+              <div class="mini-box"><h4>Mito</h4><p>La insulina dañará a mi bebé.</p><h4>Verdad</h4><p>La insulina no atraviesa la placenta y es una forma segura de reducir el azúcar durante el embarazo.</p></div>
+              <div class="mini-box"><h4>Mito</h4><p>Una vez que empiece a usar insulina, siempre la necesitaré.</p><h4>Verdad</h4><p>Muchas mujeres dejan de usar insulina después del parto cuando la glucosa vuelve a la normalidad.</p></div>
+              <div class="mini-box"><h4>Mito</h4><p>La insulina causa aumento excesivo de peso.</p><h4>Verdad</h4><p>Una dosis adecuada ayuda a controlar el azúcar sin causar aumento innecesario de peso. El aumento de peso en el embarazo es normal y saludable.</p></div>
+            </div>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>A1C/eAG</h3>
+            <p>El A1C es una prueba de glucosa en sangre que también puede llamarse promedio aproximado de glucosa o eAG. Indica el promedio de glucosa durante los últimos dos o tres meses al medir cuánta glucosa se adhiere a los glóbulos rojos.</p>
+            <p>Recuerde pedir a su equipo de atención médica que mida el A1C por lo menos dos veces al año, o más seguido si cambia medicamentos o hace otros cambios en su cuidado. El objetivo general para A1C suele ser 7% (eAG 154 mg/dL), aunque su médico puede recomendar otro nivel.</p>
+            <table class="data-table">
+              <thead><tr><th>A1C</th><th>Promedio de glucosa (eAG)</th></tr></thead>
+              <tbody>
+                <tr><td>6%</td><td>126 mg/dL</td></tr>
+                <tr><td>6.5%</td><td>140 mg/dL</td></tr>
+                <tr><td>7%</td><td>154 mg/dL</td></tr>
+                <tr><td>7.5%</td><td>169 mg/dL</td></tr>
+                <tr><td>8%</td><td>183 mg/dL</td></tr>
+                <tr><td>8.5%</td><td>197 mg/dL</td></tr>
+                <tr><td>9%</td><td>212 mg/dL</td></tr>
+                <tr><td>9.5%</td><td>226 mg/dL</td></tr>
+                <tr><td>10%</td><td>240 mg/dL</td></tr>
+                <tr><td>10.5%</td><td>255 mg/dL</td></tr>
+              </tbody>
+            </table>
+            <p>Ambas pruebas son importantes: el medidor ayuda con decisiones día a día y el A1C da una idea general de lo que sucede.</p>
+          </article>
+
+          <article class="guide-panel">
+            <h3><i class="bi bi-stars" aria-hidden="true"></i>Después del nacimiento</h3>
+            <p>Su médico revisará su azúcar en la sangre de 6 a 12 semanas después del nacimiento del bebé para asegurarse de que esté normal. Debido a la diabetes gestacional, usted tiene mayor riesgo de desarrollar diabetes más tarde. Puede reducir el riesgo si continúa con una dieta saludable, actividad física regular y control del peso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Bring your glucose log and meal questions.</h2>
+        <p>Our team can help turn numbers, meals, snacks, and medication instructions into a realistic plan for your pregnancy.</p>
+        <a class="btn-pill btn-light-outline" href="https://drearhart.com/contact.html">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="https://drearhart.com/img/PMG-LOGO-W%20TXT.svg" alt="Perinatal Medical Group">
+        <p>Ultrasound | Nutrition | Genetics</p>
+        <p>©2024 Perinatal Medical Group. All rights reserved.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="https://drearhart.com/patients.html">Patient Information</a>
+        <a href="https://drearhart.com/referring-providers.html">Referring Provider</a>
+        <a href="https://drearhart.com/contact.html">Contact Us</a>
+        <a href="#english">English</a>
+        <a href="#spanish">Español</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
